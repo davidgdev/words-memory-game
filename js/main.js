@@ -7,11 +7,28 @@ inputBox.disabled = true;
 // Start Game
 startButton.addEventListener('click', (e) => {
     levelOne();
-    startButton.disabled = true;
+    // startButton.disabled = true;
+    startButton.innerHTML = 'RESTART';
+    startButton.classList.add('reload');
     inputBox.disabled = false;
     inputBox.placeholder = '';
     inputBox.focus();
+
+    reload();
 });
+
+// Restart game
+const reload = () => {
+    let reloadButton = document.querySelector('.reload');
+    
+    reloadButton.addEventListener('click', (e) => {
+        confirm('Do you want to restart the game?');
+        location.reload();
+    });
+
+}
+
+
 
 const wordsLevelOne = ['heal', 'eaux','west','crack','herb','shape','anger','fairy','queen'];
 
@@ -100,7 +117,7 @@ inputBox.addEventListener('keypress', (e) => {
 
             console.log(`No Points = ${noPoints}`);
 
-            print.innerHTML += `<span class="wrong">Wrong Word!! Strike ${noPoints}</span><br>`;
+            print.innerHTML += `<span class="wrong">Wrong Word!! Strike ${noPoints}!!</span><br>`;
 
             document.getElementById("inputBox").value = "";
 
