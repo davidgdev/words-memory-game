@@ -38,7 +38,7 @@ input:focus, textarea:focus, select:focus{
     text-align: center;
 }
 .instructions h1 {
-    margin-top: 150px;
+    margin-top: 100px;
     font-weight: normal;
     font-size: 2.5em;
     letter-spacing: 5px;
@@ -88,7 +88,7 @@ input:focus, textarea:focus, select:focus{
     cursor: pointer;
 }
 #startButton:hover {
-    background: #8c9eff;
+    background: rgba(256, 256, 256, .2);
     transition: all 0.35s ease;
 }
 .containerResults {
@@ -104,13 +104,21 @@ input:focus, textarea:focus, select:focus{
     text-align: left;
 }
 .correct {
-    color:#76ff03;
+    color:var(--white-color);
 }
 .wrong {
-    color:#ff1744;
+    color:var(--black-color);
 }
 .fade {
     opacity: 0;
+}
+.levelTwo {
+    transition: background 1.5s ease;
+    background: #2196f3;
+}
+.levelThree {
+    transition: background 1.5s ease;
+    background:#4db6ac;
 }
 
 /* Responsive Design */

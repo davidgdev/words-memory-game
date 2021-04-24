@@ -2,6 +2,8 @@ const startButton = document.querySelector('#startButton');
 
 const inputBox = document.querySelector('#inputBox');
 
+const body = document.querySelector('body');
+
 inputBox.disabled = true;
 
 // Start Game
@@ -29,12 +31,12 @@ const reload = () => {
 }
 
 
+// Pool of Words
+const wordsLevelOne = ['set','tree','damn','fleet','rebel','sock','guide','video','ask','exit','die','lemon','charm','wall','final','fork','main','bite','gain','range','marsh','user','craft','coin','air','money','hay','young','anger','vague','palm','flu','black','new','hover','item','widen','arch','star','delay','dry','north','mark','soil','trait','monk','moon','do','bus','motif'];
 
-const wordsLevelOne = ['heal', 'eaux','west','crack','herb','shape','anger','fairy','queen'];
+const wordsLevelTwo = ['degree','screen','favourite','episode','reckless','abridge','census','gradual','sleeve','shatter','estate','consolidate','peasant','profile','summary','profound','preparation','forest','serious','satellite','railcar','earthquake','secure','offense','spider','parking','filter','expression','ambition','background','distant','charge','reader','cemetery','origin','writer','cucumber','obligation','language','prosecute','teacher','fisherman','climate','creation','redundancy','plaster','linear','document','escape','student',];
 
-const wordsLevelTwo = ['perceive', 'fastidious', 'settle', 'problem', 'aquarium', 'transfer', 'bitter', 'business', 'person'];
-
-const wordsLevelThree = ['interactive', 'bedroom', 'tune', 'light', 'heavy', 'threaten', 'effective', 'affair', 'gaffe'] ;
+const wordsLevelThree = ['policeman','flight','justify','vision','build','tent','engagement','deliver','wedding','comfort','critical','spill','insight','disagree','priority','radio','fox','presidency','throne','thesis','resign','displace','widen','material','celebration','reach','abuse','point','contract','environmental','revive','houseplant','ring','sow','vegetation','criticism','proclaim','formal','state','ghost','humor','overeat','trade','stomach','rebellion','transfer','belly','hypothesis','dozen','class',] ;
 
 
 const print = document.querySelector('#results');
@@ -42,7 +44,7 @@ const print = document.querySelector('#results');
 let sumPoints = 0;
 let noPoints = 0;
 
-
+// Levels
 const levelOne = () => {
     const random = Math.floor(Math.random() * wordsLevelOne.length);
     displayWord = wordsLevelOne[random];
@@ -61,6 +63,8 @@ const levelTwo = () => {
     const wordBox = document.querySelector('#wordBox');
     wordBox.innerHTML = displayWord;
 
+    body.classList.add('levelTwo');
+
     setTimeout(() => {
         wordBox.innerHTML = '';
     }, 1000);
@@ -78,11 +82,13 @@ const levelThree = () => {
     const wordBox = document.querySelector('#wordBox');
     wordBox.innerHTML = displayWord;
 
+    body.classList.remove('levelTwo');
+    body.classList.add('levelThree');
+
     setTimeout(() => {
         wordBox.innerHTML = '';
     }, 900);
 }
-
 
 inputBox.addEventListener('keypress', (e) => {
     const inputValue = document.getElementById('inputBox').value;
