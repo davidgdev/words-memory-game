@@ -9,6 +9,7 @@ startButton.addEventListener('click', (e) => {
     levelOne();
     startButton.disabled = true;
     inputBox.disabled = false;
+    inputBox.placeholder = '';
     inputBox.focus();
 });
 

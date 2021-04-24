@@ -9,14 +9,15 @@
 </head>
 <body>
     <div class="mainContainer">
-        <h1>Words Memory Game</h1>
-        <p>Type the word in the next box as fast as you can.</p>
-        <p>Hit enter everytime you type the word.</p>
+        <div class="instructions">
+            <h1>Words Memory Game</h1>
+            <p>Type the word in the next box as fast as you can. <br> Hit enter everytime you type the word.</p>
+        </div>
 
         <div class="container">
             <p id="wordBox"></p>
-            <input type="text" id="inputBox">
-            <button class="button" id="startButton">Start</button>
+            <input type="text" id="inputBox" placeholder="Your word here" autocomplete="off">
+            <button class="button" id="startButton">START</button>
         </div>
 
         <div class="containerResults">
