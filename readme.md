@@ -26,6 +26,6 @@ Find the full demo here:
 
 
 
-## with 💪 and ❤️ By:
+## Developed with 💪 and ❤️ By:
 
 [David Galeano](https://github.com/davidevOS) 
