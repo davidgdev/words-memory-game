@@ -9,13 +9,9 @@ inputBox.disabled = true;
 // Start Game
 startButton.addEventListener('click', (e) => {
     levelOne();
-    // startButton.disabled = true;
     startButton.innerHTML = 'RESTART';
     startButton.classList.add('reload');
-    inputBox.disabled = false;
     inputBox.placeholder = '';
-    inputBox.focus();
-
     reload();
 });
 
@@ -46,18 +42,21 @@ let noPoints = 0;
 
 // Levels
 const levelOne = () => {
+    inputBox.disabled = true;
     const random = Math.floor(Math.random() * wordsLevelOne.length);
     displayWord = wordsLevelOne[random];
-    // console.log(displayWord);
     const wordBox = document.querySelector('#wordBox');
     wordBox.innerHTML = displayWord;
-
+    
     setTimeout(() => {
         wordBox.innerHTML = '';
+        enableInput();
     }, 1500);
+    
 }
 
 const levelTwo = () => {
+    inputBox.disabled = true;
     const random = Math.floor(Math.random() * wordsLevelTwo.length);
     displayWord = wordsLevelTwo[random];
     const wordBox = document.querySelector('#wordBox');
@@ -67,10 +66,14 @@ const levelTwo = () => {
 
     setTimeout(() => {
         wordBox.innerHTML = '';
+        enableInput();
     }, 1000);
+
+
 }
 
 const levelThree = () => {
+    inputBox.disabled = true;
     const random1 = Math.floor(Math.random() * wordsLevelThree.length);
     const random2 = Math.floor(Math.random() * wordsLevelThree.length );
 
@@ -87,9 +90,18 @@ const levelThree = () => {
 
     setTimeout(() => {
         wordBox.innerHTML = '';
+        enableInput();
     }, 900);
+
 }
 
+const enableInput = () => {
+    inputBox.disabled = false;
+    inputBox.focus();
+        
+}
+
+// Functionality when player press Enter
 inputBox.addEventListener('keypress', (e) => {
     const inputValue = document.getElementById('inputBox').value;
 
@@ -99,18 +111,13 @@ inputBox.addEventListener('keypress', (e) => {
 
             sumPoints += 1;
 
-            console.log(`Sum Points = ${sumPoints}`);
-            
-            
             print.innerHTML += `<span class="correct">Perfect!! (${displayWord})</span><br>`;
 
 
             if(sumPoints >= 6) {
                 levelThree();
-                console.log('Level Three');
             } else if(sumPoints >= 3) {
                 levelTwo();
-                console.log('Level Two');
             } else {
                 levelOne();
             }
@@ -120,8 +127,6 @@ inputBox.addEventListener('keypress', (e) => {
             
         } else {
             noPoints += 1;
-
-            console.log(`No Points = ${noPoints}`);
 
             print.innerHTML += `<span class="wrong">Wrong Word!! Strike ${noPoints}!!</span><br>`;
 
