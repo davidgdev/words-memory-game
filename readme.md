@@ -6,11 +6,11 @@
 
   
 
-## Demo
+## Game Demo
 
 ![Game Demo](assets/words-memory-game-demo.gif)
 
-Find the full demo here: 
+Find the full demo here: ![Game Demo](https://words-memory-game.vercel.app/)
 
   
 
