@@ -24,6 +24,8 @@
 
 ![Diagram of the game](assets/words-memory-game-diagram.svg)
 
+## Coach
+Ana Belisa Martínez
 
 
 ## Developed with 💪 and ❤️ By: 
