@@ -28,4 +28,4 @@
 
 ## Developed with 💪 and ❤️ By: 
 
-[David Galeano](https://github.com/davidevOS) 
+Slack: [David Galeano [C7] ](https://github.com/davidevOS) |  Frontend
